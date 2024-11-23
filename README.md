@@ -1,8 +1,8 @@
 # Weekly Meal Plan Maker
 
-#### Video Demo:  <https://youtu.be/DdUETc1vdOo>
+#### Video Demo:  
 
-#### App Access Link: <http://mealplanmaker.pythonanywhere.com>
+#### App Access Link: 
 
 This is my final project for CS50's Web Programming with Python and Javascript Course.
 As the capstone project for this course, my task was to design and implement a dynamic web application, albeit with a few requirements and constraints.
@@ -82,12 +82,5 @@ Furthermore, the donut chart visualizing the percentages of calories by macronut
 Most of the styling in this app was done using Bootstrap, and my app is fully mobile-responsive.
 
 
-### Hosting
-
-Since this is the best project I made so far in my short life as a developer, I wanted to get hosting and make my website available online. 
-After doing some research online, I found two main options that had a free plan offering, [pythonanywhere](https://www.pythonanywhere.com/) and [Heroku](https://www.heroku.com/).
-
-I decided to go with pythonanywhere, and after a little bit of struggle, I managed to get it to work.
-Here is a [link](http://mealplanmaker.pythonanywhere.com/) to it.
 
 
