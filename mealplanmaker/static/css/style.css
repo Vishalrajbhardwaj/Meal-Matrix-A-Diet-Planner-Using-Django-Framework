@@ -1,0 +1,57 @@
+body {
+    background-color: #e9f7ef; /* Light green background */
+    color: #01070e; /* Dark text color */
+    font-family: 'Arial', sans-serif;
+}
+
+.navbar {
+    background-color: #f5e76a; /* Bootstrap primary light green color */
+}
+
+.navbar-brand, .nav-link {
+    color: #1b0101 !important; /* White text for navbar */
+    font-size: larger;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.nav-link:hover {
+    color: #fce794 !important; /* Yellow hover effect */
+}
+
+.container {
+    margin-top: 20px;
+}
+
+.btn-custom {
+    background-color: #28a745; /* Custom button color */
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.btn-custom:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+
+.animated {
+    animation: fadeIn 1s ease-in-out; /* Animation for elements */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.logo {
+    width: 100px; /* Adjust the size of the logo */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 10px; /* Space between logo and text */
+}
+
+.navbar-brand {
+    display: flex; /* Align logo and text */
+    align-items: center; /* Center vertically */
+}

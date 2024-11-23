@@ -1,0 +1,67 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{% block title %}MEAL MATRIX : A Diet Planner (Using Django Framework){% endblock %}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.png' %}"/>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4q02m7z1j1z1c5t9P4I4fK5z5x6z5x6z5x6z5x6z5x6z5x6z5x6z5x6" crossorigin="anonymous"></script>
+</head>
+<body style="max-width: 100%; overflow-x: hidden;">
+
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="{% url 'index' %}">
+            <img src= "{% static 'Logo.png' %}" alt="Logo" class="logo"> <!-- Placeholder for logo -->
+            MEAL MATRIX : A Diet Planner (Using Django Framework)
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'tdee' %}">TDEE Calorie Calculator</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'singlemeal' %}">Single Diet</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'weekly' %}">Weekly Meal Diet</a>
+                </li>
+                {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'logout' %}" style=" font-weight: bold;">Log Out</a>
+                    </li>
+                {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'login' %}" style="font-weight: bold;">Log In</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'register' %}" style="font-weight: bold;">Register</a>
+                    </li>
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
+
+    <main class="body animated">
+        <div class="container">
+            <div style="margin: auto; max-width: 600px;">
+                {% block body %}
+                <h1 class="text-center">Welcome to Meal Matrix!</h1>
+                <p class="text-center">Your personalized diet planner.</p>
+                <a href="{% url 'tdee' %}" class="btn btn-custom btn-lg btn-block">Get Started</a>
+                {% endblock %}
+            </div>
+        </div> 
+    </main>
+
+    {% block script %}
+    <script src="{% static 'mealplanmaker.js' %}"></script>
+    {% endblock %}
+</body>
+</html>
